@@ -29,6 +29,7 @@ code --install-extension ms-python.vscode-pylance
 code --install-extension ms-toolsai.jupyter
 code --install-extension ms-toolsai.jupyter-keymap
 code --install-extension ms-toolsai.jupyter-renderers
+code --install-extension ms-vscode-remote.remote-containers
 code --install-extension Pivotal.vscode-spring-boot
 code --install-extension redhat.ansible
 code --install-extension redhat.java
@@ -45,3 +46,6 @@ code --install-extension yzhang.markdown-all-in-one
 echo 
 echo "Copying settings over..."
 cp ${SCRIPT_DIR}/settings.json $HOME/Library/Application\ Support/Code/User/
+echo
+echo "Creating a soft symlink for initializing devcontainers in vscode..."
+sudo ln -s ${PWD}/devcontainer-init.sh /usr/local/bin/devcontainer-init 

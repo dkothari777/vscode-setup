@@ -1,0 +1,11 @@
+FROM alpine:latest
+
+RUN apk update && \
+    apk add --no-cache curl wget unzip jq aws-cli git && \
+    rm -rf /var/cache/apk/*
+
+ENV TERRAFORM_VERSION="1.2.2"
+RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
+    unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
+    mv terraform /usr/local/bin && \
+    rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip    
