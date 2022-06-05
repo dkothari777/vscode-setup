@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 RUN apk update && \
-    apk add --no-cache curl wget unzip tar jq aws-cli git make openssh && \
+    apk add --no-cache curl wget unzip tar jq aws-cli git make openssh vim && \
     rm -rf /var/cache/apk/*
 
 #TERRAFORM INSTALL
