@@ -6,7 +6,8 @@ DEVCONTAINER_TYPE=${1:-"infra"}
 
 DEVCONTAINER_JSON=$(cat <<EOF
 {
-    "image": "dkothari777/vscode-devcontainer:${DEVCONTAINER_TYPE}_latest"
+    "image": "dkothari777/vscode-devcontainer:${DEVCONTAINER_TYPE}_latest",
+    "mounts": ["source=${localEnv:HOME}/.ssh/,target=/root/.ssh/,type=bind,readonly,consistency=cached"]
 }
 EOF
 )
