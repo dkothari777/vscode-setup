@@ -1,11 +1,19 @@
 FROM alpine:latest
 
 RUN apk update && \
-    apk add --no-cache curl wget unzip jq aws-cli git && \
+    apk add --no-cache curl wget unzip tar jq aws-cli git make && \
     rm -rf /var/cache/apk/*
 
+#TERRAFORM INSTALL
 ENV TERRAFORM_VERSION="1.2.2"
 RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     mv terraform /usr/local/bin && \
-    rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip    
+    rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+
+#CONFTEST INSTALL
+ENV CONFTEST_VERSION="0.32.1"
+RUN wget "https://github.com/open-policy-agent/conftest/releases/download/v${CONFTEST_VERSION}/conftest_${CONFTEST_VERSION}_Linux_x86_64.tar.gz" && \
+    tar xzf conftest_${CONFTEST_VERSION}_Linux_x86_64.tar.gz && \
+    mv conftest /usr/local/bin && \
+    rm conftest_${CONFTEST_VERSION}_Linux_x86_64.tar.gz
