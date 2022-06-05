@@ -29,6 +29,7 @@ code --install-extension ms-python.vscode-pylance
 code --install-extension ms-toolsai.jupyter
 code --install-extension ms-toolsai.jupyter-keymap
 code --install-extension ms-toolsai.jupyter-renderers
+code --install-extension ms-vscode.makefile-tools
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension Pivotal.vscode-spring-boot
 code --install-extension redhat.ansible
