@@ -35,6 +35,7 @@ code --install-extension redhat.ansible
 code --install-extension redhat.java
 code --install-extension redhat.vscode-yaml
 code --install-extension shd101wyy.markdown-preview-enhanced
+code --install-extension tsandall.opa
 code --install-extension VisualStudioExptTeam.vscodeintellicode
 code --install-extension vscjava.vscode-java-debug
 code --install-extension vscjava.vscode-java-dependency
